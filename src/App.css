@@ -145,7 +145,6 @@
 .footer-section{
     background-color: rgb(16, 76, 64) !important;
     padding: 48px 48px 48px 48px;
-
 }
 .section-3{
     padding: 48px;
@@ -265,12 +264,6 @@
     display: flex;
     flex-direction: column;
 }
-
-.footer-logo{
-
-}
-
-
 
 .privacy-policy{
     padding: 5px 10px;
