@@ -47,12 +47,12 @@ const Header = () => {
                         </Nav>
                         {user ? (
                             <Nav className='profile-nav'>
-                                <Nav.Link href="/#">
+                                <Nav.Link href="#">
                                     <div className='header-link'>
                                         {showUserName()}
                                     </div>
                                 </Nav.Link>
-                                <Nav.Link eventKey={2} href="/login">
+                                <Nav.Link eventKey={2} href="#">
                                     <div >
                                         {showProfileImage()}
                                     </div>

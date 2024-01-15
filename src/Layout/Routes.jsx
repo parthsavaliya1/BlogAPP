@@ -9,13 +9,14 @@ import Contact from '../components/Contact';
 import Register from '../components/Register'
 import HomePage from '../admin';
 import { AuthContext } from '../context/AuthContext';
+import withAdminLayout from '../admin/layout/AdminLayout';
 
 
 const HomeWithLayout = withLayout(Home);
 const AboutWithLayout = withLayout(About)
 const ContactWithLayout = withLayout(Contact)
 const PricingWithLayout = withLayout(Pricing)
-const AdminHomeWithLayout = withLayout(HomePage)
+const AdminHomeWithLayout = withAdminLayout(HomePage)
 
 export const AppRoutes = () => {
     const { user } = useContext(AuthContext)
