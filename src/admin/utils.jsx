@@ -8,30 +8,66 @@ import { IoAnalytics } from "react-icons/io5";
 export const headerTab = [
     {
         name: "Dashboard",
-        icon:<RiDashboard2Line color="white"/>
+        icon: <RiDashboard2Line color="white" />,
+        link: '/admin/dashboard'
     },
     {
         name: "Post",
-        icon:<MdOutlinePostAdd/>
+        icon: <MdOutlinePostAdd />,
+        link: '/admin/post'
     },
     {
         name: "Tags",
-        icon:<IoPricetagsOutline/>
+        icon: <IoPricetagsOutline />,
+        link: '/admin/tags'
+
     },
     {
         name: "Comments",
-        icon:<FaRegComments/>
+        icon: <FaRegComments />,
+        link: '/admin/comments'
+
     },
     {
         name: "Users",
-        icon:<LuUsers2/>
+        icon: <LuUsers2 />,
+        link: '/admin/users'
+
     },
     {
         name: "Settings",
-        icon:<IoSettingsOutline/>
+        icon: <IoSettingsOutline />,
+        link: '/admin/settings'
+
     },
     {
         name: "Analytics",
-        icon:<IoAnalytics/>
+        icon: <IoAnalytics />,
+        link: '/admin/analytics'
+
     }
+]
+
+export const dashboardData = [
+    {
+        title:'Users',
+        count:100,
+    },
+    {
+        title:"Posts",
+        count:400
+    },
+    {
+        title:'Comments',
+        count:100,
+    },
+    {
+        title:"Tags",
+        count:400
+    },
+    {
+        title:"Likes",
+        count:1000
+    }
+
 ]

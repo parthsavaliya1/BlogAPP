@@ -32,7 +32,7 @@ const Login = () => {
             const {signInUser}= data || {}
             console.log(signInUser)
             localStorage.setItem('user',JSON.stringify(signInUser))
-            navigate('/admin')
+            navigate('/admin/dashboard')
         } catch (error) {
             console.error('Error creating user:', error);
         }

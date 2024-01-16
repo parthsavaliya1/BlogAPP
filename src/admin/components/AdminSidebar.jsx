@@ -11,6 +11,10 @@ const AdminSidebar = () => {
     localStorage.removeItem('user')
     navigate('/login');
   }
+
+  const handleNavTabClick = (link) => {
+    navigate(link)
+  }
   return (
     <div className='admin-sidebar-main'>
       <div className="admin-siderbar-logo">
@@ -19,7 +23,7 @@ const AdminSidebar = () => {
       <div className='admin-tab-list'>
         <ul className='list-type'>
           {headerTab?.map((item) => (
-            <li>
+            <li onClick={() => handleNavTabClick(item?.link)}>
               <span>{item?.icon}</span>
               <span className='tab-name'>
                 {item?.name}
