@@ -54,12 +54,15 @@ const Home = () => {
                                         </div>
                                         <hr />
                                         <div className='blog-content'>
-                                            {blog?.content}
+                                            <div dangerouslySetInnerHTML={{ __html: blog?.content }} />
                                         </div>
                                         <div className='blog-tags'>
-                                            <span className='blog-tag'>
-                                                {blog?.tags}
-                                            </span>
+                                            {blog?.tags?.length > 0 && blog?.tags?.map((tg, index) => (
+                                                <span key={index} className='blog-tag'>
+                                                    {tg}
+                                                </span>
+                                            ))}
+
                                         </div>
                                     </div>
                                 </div>

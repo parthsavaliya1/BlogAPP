@@ -7,12 +7,12 @@ import { AuthContextProvider } from './context/AuthContext.jsx';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5000',
+  uri: 'https://bloger-y1qd.onrender.com',
 });
 
 const authLink = setContext((_, { headers }) => {
   const userData = JSON.parse(localStorage.getItem('user')); // Replace with your token storage logic
-  console.log('datata',userData)
+  console.log('datata', userData)
   return {
     headers: {
       ...headers,

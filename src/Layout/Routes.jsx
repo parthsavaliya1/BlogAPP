@@ -13,13 +13,14 @@ import HomePage from '../admin';
 import { AuthContext } from '../context/AuthContext';
 import withAdminLayout from '../admin/layout/AdminLayout';
 import Dashboard from '../admin/components/Dashboard';
-import Post from '../admin/components/Post';
 import Tag from '../admin/components/Tag';
 import Comment from '../admin/components/Comment';
 import User from '../admin/components/User';
 import Setting from '../admin/components/Setting';
 import Analytics from '../admin/components/Analytics';
 import ProtectedRoute from './ProtectRoute';
+import AddorEditPost from '../admin/components/post/AddorEditPost';
+import Post from '../admin/components/post/Post';
 
 const HomeWithLayout = withLayout(Home);
 const AboutWithLayout = withLayout(About);
@@ -32,6 +33,8 @@ const CommentWithAdminLayout = withAdminLayout(Comment);
 const UserWithAdminLayout = withAdminLayout(User);
 const SettingWithAdminLayout = withAdminLayout(Setting);
 const AnalyticsWithAdminLayout = withAdminLayout(Analytics);
+
+const AddorEditPostWithAdminLayout = withAdminLayout(AddorEditPost)
 
 export const AppRoutes = () => {
     const { user } = useContext(AuthContext);
@@ -46,16 +49,18 @@ export const AppRoutes = () => {
             <Route path="/register" element={<Register />} />
 
             <Route element={<ProtectedRoute />}>
-                <Route path="/admin/dashboard" element={<DashboardWithAdminLayout />}  />
-                <Route path="/admin/post" element={<PostWithAdminLayout  />} />
-                <Route path="/admin/tags" element={<TagWithAdminLayout  />} />
-                <Route path="/admin/comments" element={<CommentWithAdminLayout />}  />
-                <Route path="/admin/users" element={<UserWithAdminLayout  />} />
+                <Route path="/admin/dashboard" element={<DashboardWithAdminLayout />} />
+                <Route path="/admin/post" element={<PostWithAdminLayout />} />
+                <Route path="/admin/tags" element={<TagWithAdminLayout />} />
+                <Route path="/admin/comments" element={<CommentWithAdminLayout />} />
+                <Route path="/admin/users" element={<UserWithAdminLayout />} />
                 <Route path="/admin/settings" element={<SettingWithAdminLayout />} />
                 <Route path="/admin/analytics" element={<AnalyticsWithAdminLayout />} />
+                <Route path="/admin/post/add" element={<AddorEditPostWithAdminLayout />} />
+
             </Route>
 
-           
+
         </Routes>
     );
 };

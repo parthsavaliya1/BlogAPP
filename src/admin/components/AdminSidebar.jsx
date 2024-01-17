@@ -22,8 +22,8 @@ const AdminSidebar = () => {
       </div>
       <div className='admin-tab-list'>
         <ul className='list-type'>
-          {headerTab?.map((item) => (
-            <li onClick={() => handleNavTabClick(item?.link)}>
+          {headerTab?.map((item,index) => (
+            <li key={index} onClick={() => handleNavTabClick(item?.link)}>
               <span>{item?.icon}</span>
               <span className='tab-name'>
                 {item?.name}

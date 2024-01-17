@@ -55,3 +55,14 @@ query getAllPost{
   }
 }
 `
+
+export const CREATE_POST = gql`
+mutation createPost($userPost:PostInput!){
+  postData:createPost(userPost:$userPost){
+    _id
+    title
+    content
+    tags
+  }
+}
+`

@@ -27,3 +27,109 @@
     width: 10%;
     border-color:rgb(16, 76, 64) !important;
 }
+
+.bredcumb-label{
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(57, 131, 120);
+    cursor: pointer;
+}
+
+.post-form-container{
+    border-radius: 20px;
+    border: 1px solid rgb(57, 131, 120);
+    padding: 30px;
+}
+
+.post-form-grp{
+    padding-bottom: 20px;
+}
+
+.quill {
+    border-color: rgb(57, 131, 120);
+}
+
+.form-control,.react-tagsinput{
+    border-color: rgb(57, 131, 120);
+}
+
+.react-tagsinput{
+    border-radius: 6px;
+}
+
+.react-tagsinput-tag{
+    border: rgb(16, 76, 64);
+    color: rgb(57, 131, 120);
+    background-color: #34d88c1c;
+}
+
+.react-tagsinput-remove{
+    text-decoration: none;
+    color: rgb(57, 131, 120);
+}
+
+.ql-container.ql-snow{
+    border-color: rgb(57, 131, 120);
+    border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.ql-toolbar{
+    border-color: rgb(57, 131, 120) !important;
+    border-top-left-radius: 6px; 
+    border-top-right-radius: 6px;
+}
+
+.ql-editor{
+    min-height: 100px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: rgb(57, 131, 120);
+}
+
+.react-tagsinput-tag,.react-tagsinput-input{
+    font-family: 'Poppins', sans-serif;
+}
+
+.add-post-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.preview-label{
+    font-size: 20px;
+    color: rgb(16, 76, 64);
+    font-weight: 600;
+}
+
+.add-post-btn-main{
+    text-align: right;
+}
+
+.post-card{
+    min-height: 500px;
+}
+
+.add-post-btn{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -.01em;
+    --tw-bg-opacity: 1;
+    background-color: rgb(16, 76, 64) !important;
+    height: 3rem;
+    padding: .25rem .5rem;
+    border-color:rgb(16, 76, 64) !important;
+    width: 150px;
+    &:hover {
+        background-color: rgb(16, 76, 64) !important;
+        border-color: rgb(16, 76, 64) !important;
+    }
+    text-align: center;
+}

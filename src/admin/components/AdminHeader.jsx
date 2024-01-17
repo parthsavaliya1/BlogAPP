@@ -1,11 +1,8 @@
 import React, { useContext } from 'react'
-import { Button, Container, Nav, Navbar, Stack } from 'react-bootstrap'
-import BlogApp from '../../assets/blog.png'
 import { AuthContext } from '../../context/AuthContext';
 
 const AdminHeader = () => {
     const { user } = useContext(AuthContext);
-    console.log(user)
     const showUserName = () => {
         return `${user?.user?.firstName} ${user?.user?.lastName}`
     }
@@ -30,19 +27,32 @@ const AdminHeader = () => {
 
         }
     }
+
+    const handleViewSite = () => {
+        const siteUrl = '/';  
+        window.open(siteUrl, '_blank', 'noopener noreferrer');
+    }
     return (
         <div className='admin-header'>
-            <div className='admin-profile-nav'>
-                <div className='header-link admin-name'>
-                    {showUserName()}
+            <div className='header-inner'>
+                <div onClick={() => handleViewSite()} className='view-site'>
+                    View Site
                 </div>
-                <div >
-                    {showProfileImage()}
-                </div>
+                <div className='admin-profile-nav'>
 
+                    <div className='header-link admin-name'>
+                        {showUserName()}
+                    </div>
+                    <div >
+                        {showProfileImage()}
+                    </div>
+
+                </div>
             </div>
 
-         
+
+
+
         </div >
     )
 }
