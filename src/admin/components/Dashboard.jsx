@@ -38,7 +38,7 @@ export const pieData = [
 const Dashboard = () => {
     return (
         <Container className='admin-layout-main'>
-            <Row className='p-10'>
+            <Row >
                 <h3>Dashboard</h3>
             </Row>
             <Row>

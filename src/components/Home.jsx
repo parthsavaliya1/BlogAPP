@@ -1,7 +1,17 @@
-import React from 'react'
+import { useQuery } from '@apollo/client';
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import { GET_ALL_POST } from '../utils/Query';
+import { calculateTimeDifference, formatDate } from '../admin/utils';
 
 const Home = () => {
+    const [allPost, setAllPost] = useState([])
+    const { loading, error, data } = useQuery(GET_ALL_POST);
+    useEffect(() => {
+        if (data) {
+            setAllPost(data.posts);
+        }
+    }, [data]);
     return (
         <div>
             <Container>
@@ -27,28 +37,28 @@ const Home = () => {
 
                     <div className='grid-container'>
 
-                        {[1, 2, 3, 4, 5].map((blog, index) => (
+                        {allPost?.map((blog, index) => (
                             <div className='card' xs={12} md={4} lg={3}>
                                 <div className='card-main'>
                                     <div>
                                         <div className='blog-title'>
-                                            My First Blog
+                                            {blog?.title}
                                         </div>
                                         <div className='blog-date-time'>
                                             <div className='blog-date'>
-                                                11/12/1998
+                                                {formatDate(blog?.createdAt)}
                                             </div>
                                             <div className='blog-time'>
-                                                {`-4 minutes`}
+                                                {`${calculateTimeDifference(blog?.createdAt)}`}
                                             </div>
                                         </div>
                                         <hr />
                                         <div className='blog-content'>
-                                            {`                                    XY sorunu, asıl probleminize yardım aramaktansa bu problemi çözmek için denediğiniz hatalı çözüm hakkında yardım aramaktır. Bu durum hem yardım isteyenler hem de yardım edecekler açısından oldukça zaman ve enerji kaybına yol açıyor. Biraz daha detaylandırmak gerekirse:`}
+                                            {blog?.content}
                                         </div>
                                         <div className='blog-tags'>
                                             <span className='blog-tag'>
-                                                English
+                                                {blog?.tags}
                                             </span>
                                         </div>
                                     </div>

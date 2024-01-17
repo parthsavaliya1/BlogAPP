@@ -25,3 +25,33 @@ mutation loginUser($userSignIn:UserSignInInput!){
   }
 }
 `
+
+export const GET_POST_BY_USER = gql`
+query{
+  postByUser{
+    _id
+    title
+    content
+    author
+    tags
+    createdAt
+  }
+}
+`
+
+export const GET_ALL_POST = gql`
+query getAllPost{
+  posts{
+    _id
+    content
+    title
+    tags
+    createdAt
+    comments{
+      _id
+      content
+      author
+    }
+  }
+}
+`

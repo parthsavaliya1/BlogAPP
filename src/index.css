@@ -2,6 +2,8 @@
 @import url('./css/profile.css');
 @import url('./css/admin-layout.css');
 @import url('./css/dashboard.css');
+@import url('./css/post.css');
+@import url('./css/common.css');
 body{
     background: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;

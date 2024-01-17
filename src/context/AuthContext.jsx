@@ -10,7 +10,6 @@ export const AuthContextProvider = ({ children }) => {
         const fetchUserData = async () => {
             try {
                 const userData = await JSON.parse(localStorage.getItem("user"));
-                console.log(userData);
                 setUser(userData);
             } catch (error) {
                 console.error("Error fetching user data:", error);
