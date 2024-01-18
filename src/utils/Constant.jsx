@@ -69,3 +69,21 @@ export const priceFaqArray = [
     },
 
 ]
+
+export const aboutContent = [
+    {
+        title: "Inclusive Community",
+        description:
+            "BlogAPP is more than a platform; it's a community. Join a diverse group of individuals who appreciate the power of words and the beauty of diverse perspectives. Engage in discussions, share feedback, and grow together.",
+    },
+    {
+        title: "Modern Design, Timeless Experience",
+        description:
+            "Our platform boasts a modern design that prioritizes simplicity and functionality. Enjoy a seamless experience as you navigate through the intuitive interface, designed to enhance your blogging journey.",
+    },
+    {
+        title: "Privacy and Security",
+        description:
+            "We understand the importance of privacy. BlogAPP is built with robust security measures to ensure that you can share your thoughts with confidence, knowing your content is in safe hands.",
+    },
+]

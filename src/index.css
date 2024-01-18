@@ -5,6 +5,8 @@
 @import url('./css/post.css');
 @import url('./css/common.css');
 @import url('./css/price.css');
+@import url('./css/about.css');
+@import url('./css/contact.css');
 body{
     background: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;

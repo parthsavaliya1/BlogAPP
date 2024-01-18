@@ -1,0 +1,30 @@
+.content-4{
+     color: rgb(26, 118, 100) !important;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.content-5{
+    color: rgb(26, 118, 100) !important;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 20px;
+    text-align: left;
+}
+.about-us-1{
+    text-align: center;
+}
+
+.content-6{
+    color: black !important;
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 20px;
+    text-align: left;
+}
+.about-img{
+    width: 500px;
+    height: 350px;
+}
