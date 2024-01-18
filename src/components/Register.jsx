@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Form, InputGroup, Row, Stack } from 'react-bootstrap'
 import logoImage from '../assets/blogfooter.png'
 import logo from '../assets/blog.png'
@@ -7,7 +7,10 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { FaRegUser } from "react-icons/fa6";
 import { CREATE_USER } from '../utils/Query';
 import { useMutation } from '@apollo/client';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '../common/Firebase';
+import { FcGoogle } from "react-icons/fc";
 
 
 const Register = () => {
@@ -17,6 +20,16 @@ const Register = () => {
     email: "",
     password: ""
   })
+  const [googleUser, setGoogleUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setGoogleUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const navigate = useNavigate();
   const [createUser, { loading, error, data }] = useMutation(CREATE_USER);
 
@@ -29,12 +42,42 @@ const Register = () => {
     })
   }
 
+  console.log(googleUser)
+
   const handleCreateUser = async () => {
     try {
+      userData.authMethod = "email";
       const { data } = await createUser({ variables: { userNew: userData } });
       navigate('/login')
     } catch (error) {
       console.error('Error creating user:', error);
+    }
+  };
+
+  const handleSignUpWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const { user } = await signInWithPopup(auth, provider);
+      const { displayName, email } = user || {}
+      const nameParts = displayName.split(" ");
+      const firstName = nameParts?.[0];
+      const lastName = nameParts?.slice(1)?.join(" ");
+
+      try {
+        const { data } = await createUser({
+          variables: {
+            userNew: {
+              firstName, lastName, email, password: "",
+              authMethod: "google"
+            }
+          }
+        });
+        navigate('/login')
+      } catch (error) {
+        console.error('Error creating user:', error);
+      }
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
     }
   };
 
@@ -122,9 +165,28 @@ const Register = () => {
               or continue with
             </div>
             <div className='login-form-btn'>
-              <Button color='#278378' className='signin-btn'>
-                Sign Up with google
-              </Button>
+              {googleUser ? (
+                <div onClick={() => handleSignUpWithGoogle()} className='sign-up-acc-btn'>
+                  <div className='user-details'>
+                    <div>
+                      <img className='google-icon-img' src={googleUser?.photoURL} />
+                    </div>
+                    <div>
+                      <div className='continue-text-user'>continue as a {googleUser?.displayName}</div>
+                      <div className='user-email-text'>{googleUser?.email}</div>
+                    </div>
+                  </div>
+                  <div>
+                    <span className='google-icon'><FcGoogle /></span>
+                  </div>
+                </div>
+              ) : (
+                <Button onClick={() => handleSignUpWithGoogle()} className='signup-btn-google'>
+                  <span className='google-icon'><FcGoogle /></span>
+                  <span className='continue-text'>Continue as Google</span>
+                </Button>
+              )}
+
             </div>
             <div className='login-continue'>
               Already have an account? <span className='login-signup-text'><a href='/login'>
@@ -134,11 +196,11 @@ const Register = () => {
           </div>
 
         </Col>
-      </Row>
+      </Row >
 
 
 
-    </Container>
+    </Container >
   )
 }
 

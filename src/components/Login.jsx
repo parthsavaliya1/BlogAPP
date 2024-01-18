@@ -8,8 +8,40 @@ import { LOGIN_USER } from '../utils/Query';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Login = () => {
+    // useEffect(() => {
+    //     const unsubscribe = onAuthStateChanged(
+    //       firebaseAuth,
+    //       async (currentUser) => {
+    //         if (!currentUser) redirect("/login");
+    //         const userEmail = currentUser.email;
+    
+    //         const { data } = await axios.post(CHECK_USER, { userEmail });
+    
+    //         if (!data.status) redirect("/login");
+    
+    //         const { name, about, photoUrl, email, id } = data?.data;
+    
+    //         dispatch({
+    //           type: "USER_INFO",
+    //           userInfo: { name, email, about, photoUrl ,id},
+    //         });
+    
+    //         dispatch({
+    //           type: "NEW_USER_INFO",
+    //           newUser: false,
+    //         });
+    //         redirect("/");
+    //       }
+    //     );
+    
+    //     return () => unsubscribe();
+    //   }, []);
+
+
+
     const [userData, setUserData] = useState({
         email: "",
         password: ""

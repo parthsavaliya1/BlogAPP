@@ -1,4 +1,4 @@
-.navbar-main{
+.navbar-main {
     background: rgb(255, 255, 255);
 }
 
@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.header{
+.header {
     position: fixed;
     transition: background-color 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67) 0s;
     height: 80px;
@@ -16,14 +16,16 @@
     box-shadow: none;
     display: block;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Add a shadow effect */
 }
 
-.logo-img{
+.logo-img {
     height: 90px;
     width: 90px;
 }
-.login-btn{
+
+.login-btn {
     position: relative;
     display: inline-flex;
     -webkit-box-align: center;
@@ -41,12 +43,12 @@
     background-color: rgb(26, 118, 100) !important;
     transition-property: opacity;
     border-radius: 99px !important;
-    border-color:rgb(26, 118, 100) !important;
+    border-color: rgb(26, 118, 100) !important;
     font-weight: 500 !important;
     font-size: 16px !important;
 }
 
-.register-btn{
+.register-btn {
     position: relative;
     display: inline-flex;
     -webkit-box-align: center;
@@ -71,7 +73,7 @@
     font-size: 16px !important;
 }
 
-.started-btn{
+.started-btn {
     position: relative;
     display: inline-flex;
     -webkit-box-align: center;
@@ -97,7 +99,7 @@
     margin-top: 20px;
 }
 
-.header-link{
+.header-link {
     margin: 0px;
     text-transform: none;
     white-space: pre-line;
@@ -109,24 +111,24 @@
     font-size: 16px !important;
 }
 
-.section-1{
+.section-1 {
     padding: 48px;
     text-align: center;
 }
 
-.content-2{
+.content-2 {
     color: rgb(26, 118, 100) !important;
     font-size: 48px;
     font-weight: 600;
 }
 
-.content-1{
+.content-1 {
     color: rgb(16, 76, 64) !important;
     font-size: 48px;
     font-weight: 600;
 }
 
-.section-2{
+.section-2 {
     padding: 60px 48px 80px 48px;
     background-color: #34d88c1c !important;
     position: relative;
@@ -142,23 +144,24 @@
 
 */
 
-.footer-section{
+.footer-section {
     background-color: rgb(16, 76, 64) !important;
     padding: 48px 48px 48px 48px;
 }
-.section-3{
+
+.section-3 {
     padding: 48px;
     text-align: center;
 }
 
-.content-3{
+.content-3 {
     color: rgb(26, 118, 100) !important;
     font-size: 40px;
     font-weight: 600;
     padding-top: 20px;
 }
 
-.blog-main{
+.blog-main {
     text-align: center;
     font-size: 48px !important;
     font-weight: 600 !important;
@@ -166,14 +169,14 @@
     margin-bottom: 30px;
 }
 
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.grid-container-2{
+.grid-container-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 20px;
@@ -181,21 +184,24 @@
     padding-top: 40px;
 }
 
-.blog-home-section{
+.blog-home-section {
     margin-top: 30px;
 }
-.section-title{
+
+.section-title {
     font-size: 32px;
     font-weight: 500;
     color: rgb(16, 76, 64);
 }
-.section-content{
+
+.section-content {
     margin-top: 20px;
     font-size: 24px;
     font-weight: 300;
     color: black
 }
-.card{
+
+.card {
     max-width: 704px;
     min-width: 300px !important;
     transition-duration: 150ms;
@@ -211,7 +217,80 @@
     background-color: rgb(255, 255, 255);
 }
 
-.card-main{
+.signup-btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff !important;
+    background-image: none;
+    border: 1px solid #dadce0 !important;
+    color: #3c4043 !important;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    letter-spacing: 0.25px;
+    outline: none;
+    overflow: hidden;
+    padding: 8px 12px !important;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    display: flex !important;
+}
+
+
+.google-icon svg {
+    height: 24px;
+    width: 24px;
+}
+
+.continue-text {
+    flex-grow: 1;
+    /* This ensures the text takes up the remaining space */
+    text-align: center;
+}
+
+.sign-up-acc-btn {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #dadce0;
+    padding: 6px 6px;
+    border-radius: 4px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+}
+
+.google-icon-img {
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.user-email-text {
+    font-size: 10px;
+    font-weight: 400;
+    color: #5f6368;
+    fill: #5f6368;
+}
+
+.continue-text-user {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.card-main {
     padding: 32px 16px;
     -webkit-box-align: center;
     align-items: center;
@@ -219,22 +298,23 @@
     display: flex;
 }
 
-.blog-title{
+.blog-title {
     color: rgb(26, 118, 100) !important;
     font-size: 24px;
     font-weight: 600;
 }
 
-.blog-date-time{
+.blog-date-time {
     display: flex;
 }
 
-.blog-date,.blog-time{
+.blog-date,
+.blog-time {
     font-weight: 500;
     font-size: 12px;
 }
 
-.blog-content{
+.blog-content {
     color: rgb(26, 118, 100) !important;
     font-size: 16px;
     font-weight: 500;
@@ -244,47 +324,51 @@
     overflow: hidden;
 }
 
-.blog-tags{
+.blog-tags {
     margin-top: 10px;
     padding-left: 5px;
 }
-.blog-tag{
+
+.blog-tag {
     color: rgb(255, 255, 255);
     background-color: rgb(26, 118, 100) !important;
     transition-property: opacity;
     border-radius: 99px !important;
-    border-color:rgb(26, 118, 100) !important;
+    border-color: rgb(26, 118, 100) !important;
     font-weight: 500 !important;
     font-size: 12px !important;
     padding: 2px 7px;
     margin-left: 5px;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     color: rgb(255, 255, 255);
 }
 
-.footer-left{
+.footer-left {
     display: flex;
     flex-direction: column;
 }
 
-.privacy-policy{
+.privacy-policy {
     padding: 5px 10px;
 }
-.privacy{
+
+.privacy {
     padding-left: 0px !important;
 }
 
-.icon{
+.icon {
     padding: 5px;
 }
-.social-icon{
+
+.social-icon {
     display: flex;
 
 }
-.footer-policy{
+
+.footer-policy {
     display: flex;
 }
