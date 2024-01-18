@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from '../../assets/blogfooter.png'
 import { headerTab } from '../utils'
 import { IoMdLogOut } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 const AdminSidebar = () => {
+  const {setUser} = useContext(AuthContext)
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    setUser(null)
     localStorage.removeItem('user')
     navigate('/login');
   }

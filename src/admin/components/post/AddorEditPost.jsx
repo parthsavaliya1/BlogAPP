@@ -51,7 +51,6 @@ const AddorEditPost = () => {
             }
             const { data } = await createPost({ variables: { userPost: createPostData } });
             const { postData } = data || {}
-            console.log(postData)
             navigate('/admin/post')
         } catch (error) {
             console.error('Error creating user:', error);

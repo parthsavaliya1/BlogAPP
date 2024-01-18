@@ -5,7 +5,6 @@ import { AuthContext } from '../context/AuthContext'
 
 const Header = () => {
     const { user } = useContext(AuthContext);
-    console.log(user)
     const showUserName = () => {
         return `${user?.user?.firstName} ${user?.user?.lastName}`
     }

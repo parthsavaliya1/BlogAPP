@@ -81,12 +81,11 @@ export const formatDate = (date) => {
 export const calculateTimeDifference = (date) => {
     const currentTime = moment();
     const pastTime = moment.unix(date / 1000).format("DD MMM YYYY hh:mm a")
-    console.log(pastTime)
 
     const duration = moment.duration(currentTime.diff(pastTime));
 
     const hours = Math.floor(duration.asHours());
     const minutes = duration.minutes();
-    
+
     return `-${hours} Hours ${minutes} Minutes`
 }

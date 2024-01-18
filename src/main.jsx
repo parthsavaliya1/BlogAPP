@@ -11,8 +11,7 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const userData = JSON.parse(localStorage.getItem('user')); // Replace with your token storage logic
-  console.log('datata', userData)
+  const userData = JSON.parse(localStorage.getItem('user'));
   return {
     headers: {
       ...headers,

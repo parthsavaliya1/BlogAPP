@@ -45,7 +45,7 @@ const Dashboard = () => {
                 <div className='dashboard-grid-container'>
 
                     {dashboardData.map((item, index) => (
-                        <div className='admin-card' xs={12} md={4} lg={3}>
+                        <div key={index} className='admin-card' xs={12} md={4} lg={3}>
                             <div className='admin-card-main'>
                                 <div className='card-verticle-line'>{item?.title}
                                 </div>

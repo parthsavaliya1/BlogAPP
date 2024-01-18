@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Col, Container, Form, InputGroup, Row, Stack } from 'react-bootstrap'
 import logoImage from '../assets/blogfooter.png'
 import logo from '../assets/blog.png'
@@ -7,12 +7,14 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { LOGIN_USER } from '../utils/Query';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
     const [userData, setUserData] = useState({
         email: "",
         password: ""
     })
+    const {setUser} = useContext(AuthContext)
 
     const [loginUser, { loading, error, data }] = useMutation(LOGIN_USER);
     const navigate = useNavigate();
@@ -30,8 +32,8 @@ const Login = () => {
         try {
             const { data } = await loginUser({ variables: { userSignIn: userData } });
             const {signInUser}= data || {}
-            console.log(signInUser)
             localStorage.setItem('user',JSON.stringify(signInUser))
+            setUser(signInUser)
             navigate('/admin/dashboard')
         } catch (error) {
             console.error('Error creating user:', error);

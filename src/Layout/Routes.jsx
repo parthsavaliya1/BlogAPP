@@ -1,7 +1,7 @@
 // AppRoutes.js
 
-import React, { useContext } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import withLayout from './withLayout';
 import Home from '../components/Home';
 import Login from '../components/Login';
@@ -21,6 +21,8 @@ import Analytics from '../admin/components/Analytics';
 import ProtectedRoute from './ProtectRoute';
 import AddorEditPost from '../admin/components/post/AddorEditPost';
 import Post from '../admin/components/post/Post';
+import { useLocation } from 'react-router-dom';
+
 
 const HomeWithLayout = withLayout(Home);
 const AboutWithLayout = withLayout(About);
@@ -38,6 +40,16 @@ const AddorEditPostWithAdminLayout = withAdminLayout(AddorEditPost)
 
 export const AppRoutes = () => {
     const { user } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate()
+    const currentUrl = location.pathname;
+    useEffect(() => {
+        if(currentUrl === '/login' || currentUrl === '/register') {
+            if(user) {
+                navigate('/')
+            }
+        }
+    }, [user])
 
     return (
         <Routes>
@@ -45,8 +57,8 @@ export const AppRoutes = () => {
             <Route path="/about" element={<AboutWithLayout />} />
             <Route path="/contact" element={<ContactWithLayout />} />
             <Route path="/pricing" element={<PricingWithLayout />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={user ? <HomeWithLayout /> : <Login />} />
+            <Route path="/register" element={user ? <HomeWithLayout /> : <Register />} />
 
             <Route element={<ProtectedRoute />}>
                 <Route path="/admin/dashboard" element={<DashboardWithAdminLayout />} />

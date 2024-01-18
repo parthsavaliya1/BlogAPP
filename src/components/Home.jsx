@@ -38,7 +38,7 @@ const Home = () => {
                     <div className='grid-container'>
 
                         {allPost?.map((blog, index) => (
-                            <div className='card' xs={12} md={4} lg={3}>
+                            <div key={index} className='card' xs={12} md={4} lg={3}>
                                 <div className='card-main'>
                                     <div>
                                         <div className='blog-title'>

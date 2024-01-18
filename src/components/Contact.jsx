@@ -1,15 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, InputGroup, Row, Stack } from 'react-bootstrap'
-import logoImage from '../assets/blogfooter.png'
-import logo from '../assets/blog.png'
-import { MdOutlineAttachEmail } from "react-icons/md";
-import { RiLockPasswordLine } from "react-icons/ri";
-import { LOGIN_USER } from '../utils/Query';
-import { useMutation } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
-
 const Contact = () => {
-
 
     const [contactData, setContactData] = useState([{
         name: "",
@@ -25,9 +16,6 @@ const Contact = () => {
             [name]: value
         })
     }
-
-
-
 
     return (
         <Container >
