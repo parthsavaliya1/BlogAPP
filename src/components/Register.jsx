@@ -42,7 +42,6 @@ const Register = () => {
     })
   }
 
-  console.log(googleUser)
 
   const handleCreateUser = async () => {
     try {
